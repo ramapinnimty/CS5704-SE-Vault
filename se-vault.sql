@@ -9,11 +9,36 @@ USE `video`;
 
 
 
+
 CREATE TABLE `admins` (
   `username` varchar(20) NOT NULL,
   `password` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+insert into admins values('admin', 'admin');
+
+CREATE TABLE `users` (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `videos` (
+  `video_ID` varchar(50) NOT NULL,
+  `video_title` varchar(200) DEFAULT NULL,
+  `uploader` varchar(20) DEFAULT NULL,
+  `view_count` varchar(10) DEFAULT NULL,
+  `upload_date` date DEFAULT NULL,
+  PRIMARY KEY (`video_ID`),
+  KEY `uploader` (`uploader`),
+  CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`uploader`) REFERENCES `users` (`username`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 
 
 CREATE TABLE `favourites` (
@@ -37,26 +62,6 @@ CREATE TABLE `flags` (
 
 
 
-CREATE TABLE `users` (
-  `username` varchar(20) NOT NULL,
-  `password` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-CREATE TABLE `videos` (
-  `video_ID` varchar(50) NOT NULL,
-  `video_title` varchar(200) DEFAULT NULL,
-  `uploader` varchar(20) DEFAULT NULL,
-  `view_count` varchar(10) DEFAULT NULL,
-  `upload_date` date DEFAULT NULL,
-  PRIMARY KEY (`video_ID`),
-  KEY `uploader` (`uploader`),
-  CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`uploader`) REFERENCES `users` (`username`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-USE video;
 
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER add_date BEFORE INSERT ON `videos`

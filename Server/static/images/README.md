@@ -1,1 +1,1 @@
-Places video previews here.
+Dynamically generated thumbnails are placed here.

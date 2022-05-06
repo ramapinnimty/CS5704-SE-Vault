@@ -17,9 +17,9 @@ python WebDriver.py
 - PreReq 2. Video is already uploaded
 
 **Steps to run Use-case**
-- Step-1:For PreReq 1 , run 1,2,3 (Signup,logout,login) in WebDriver.py
-- Step-2: Upload the video under the uploads tab
-- Step-3: Run 3,4(Login,stream video) in webdriver.py
+- Step-1: For PreReq 1 , run 1, 2, 3 (Signup, logout, login) in `WebDriver.py`
+- Step-2: Upload the video under the "uploads" tab
+- Step-3: Run 3, 4 (Login, stream video) in `WebDriver.py`
 
 **Result in Selenium:** System will return the title of the video along with exit status 0.
 

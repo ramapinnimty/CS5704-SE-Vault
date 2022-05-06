@@ -1,1 +1,1 @@
-Once the video is uploaded it is stored in this folder
+Dynamically generated thumbnails are placed here.

@@ -1,4 +1,4 @@
-This folder contains all the code for server side of the application.
+This folder contains all the code for server-side of the application.
 
 Scripts:
 
@@ -8,4 +8,4 @@ Scripts:
 
 `database.py` - connects and executes all the database commands to insert, delete and update
 
-`server.py` - the main server-side scripts
+`server.py` - the main server-side script

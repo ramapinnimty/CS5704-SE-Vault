@@ -93,6 +93,11 @@ CS5704-SE-Vault % python ./Server/server.py
 
 ![Upload a image](images/uploaded_videos.png)
 
+
+**USE-CASE 2**
+ - Stream a video
+ Click on any video available in "Random" page from Navigation Bar.
+
 We tracked the project progress using KANBAN board and you can find it [here](https://github.com/ramapinnimty/CS5704-SE-Vault/projects/1) under the "Projects" section of the repository.
 
 

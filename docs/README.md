@@ -1,1 +1,1 @@
-This folder contains all the detailed project documentation.
+This folder contains detailed project documentation.

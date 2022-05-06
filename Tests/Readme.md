@@ -1,25 +1,28 @@
-Prerequisites: 
-The system is set up with the instructions given above
+## Tests
+**Prerequisites:**
+The system is set up with the instructions given above in `README.md`
 
-Steps for testing:
-1. Run the python file webdriver.py 
+**Steps for testing:**
+- Step 1. Run the python file WebDriver.py. You can run using the command below.
+```
+python WebDriver.py
+```
+## Usecase
+**Usecase: Stream a Video**
 
-using python WebDriver.py
+**Prerequisites:**
+- PreReq 1. User has access to the system
+- PreReq 2. Video is already uploaded
 
-Steps to execute Usecase
-Usecase: Stream a Video
+**Steps to run UseCase**
+- Step-1:For PreReq 1 , run 1,2,3 (Signup,logout,login) in WebDriver.py
+- Step-2: Upload the video under the uploads tab
+- Step-3: Run 3,4(Login,stream video) in webdriver.py
 
-Prerequisites : 
-1. User has access to the system
-2. Video is already uploaded
+Result in Selenium: System will return the title of the video along with exit status 0. 
 
-Step-1:For prereq1 , run 1,2,3 (Signup,logout,login) in webdriver.py
-Step-2: Upload the video under the uploads tab
-Step-3: Run 3,4(Login,stream video) in webdriver.py
+**Expected result:** The user is able to stream the video.
 
-Result in selenium: System will return the title of the video along with exit status 0. 
+The detailed description of different test cases is provided in `SE Project- Test Cases.xlsx`
 
-Expected result: The user is able to stream the video.
-
-The detailed description of different test cases is provided in 
 

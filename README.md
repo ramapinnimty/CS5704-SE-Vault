@@ -89,7 +89,7 @@ CS5704-SE-Vault % python ./Server/server.py
 
 ![Upload a image](images/upload_video.png)
 
-  Expected behaviour: You can verify the uploaded video by clicking on "My Videos" button from the NavBar.
+**Expected behaviour:** You can verify the uploaded video by clicking on "My Videos" button from the NavBar.
 
 ![Upload a image](images/uploaded_videos.png)
 

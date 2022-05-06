@@ -98,6 +98,12 @@ We tracked the project progress using KANBAN board and you can find it [here](ht
 
 The corresponding instructions for Testing our framework are [here](https://github.com/ramapinnimty/CS5704-SE-Vault/tree/main/Tests).
 
+## System requirements
+
+* Windows version  (or higher) or MacOS Catalina (or Hhgher).
+* 64-bit Python 3.8.8 installation. We recommend installation through `pip` with numpy 1.19.2 or newer.
+* MySQL workbench platform. 
+
 ## Contact
 Mehul Bhanushali [(mehulb2203)](https://github.com/mehulb2203), Rama Krishna Pinnimty [(ramapinnimty)](https://github.com/ramapinnimty), Swanand Vaishampayan [(swanandsv)](https://github.com/swanandsv), Sushma Kakarla [(Sushk1821)](https://github.com/Sushk1821)
 

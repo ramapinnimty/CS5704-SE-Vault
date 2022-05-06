@@ -14,11 +14,7 @@ All the  is available via the following links:
 
 ## Instructions
 
-Download the .zip file from the backup folder. Alternaltively, you can choose to clone. Then unzip the file and install the requirements 
-
-The official Google Drive link is here.
-
-
+Download the .zip file from the backup folder. Alternaltively, you can choose to clone. Then unzip the file and install the requirements.
 
 - Step 1: To avoid any conflicts, we recommend using a virtual environment. You can create one by using the commands specified below.
 ```
@@ -39,7 +35,7 @@ pip install -r requirements.txt
 
 - Step 6: Open `xammp` and start the MySQL module.
 
-- Step 7: Start `MYSQL Workbench` and run the `se-vault.sql` script to initialize the database:
+- Step 7: Start `MYSQL Workbench` and run the `se-vault.sql` script to initialize the database.
 
 - Step 8: Start the Server and Client for se-vault in different terminals.
 
@@ -50,7 +46,7 @@ To start the Client:
 ```
 python ./Client/client.py
 ```
-Expected output: 
+**Expected output:**
 ```
 CS5704-SE-Vault % python ./Client/client.py
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
@@ -63,7 +59,7 @@ To start the Server:
 ```
 python ./Server/server.py
 ```
-Expected output:
+**Expected output:**
 ```
 CS5704-SE-Vault % python ./Server/server.py
  * Running on http://127.0.0.1:8080/ (Press CTRL+C to quit)
@@ -73,7 +69,7 @@ CS5704-SE-Vault % python ./Server/server.py
 ```
 
 **USE-CASE 1**
-- Upload a video
+- *Upload a video*
 
   Once the system (Server and Client) is up and running...
 
@@ -95,7 +91,7 @@ CS5704-SE-Vault % python ./Server/server.py
 
 
 **USE-CASE 2**
- - Stream a video
+- *Stream a video*
  Click on any video available in "Random" page from Navigation Bar.
 
 We tracked the project progress using KANBAN board and you can find it [here](https://github.com/ramapinnimty/CS5704-SE-Vault/projects/1) under the "Projects" section of the repository.
@@ -105,14 +101,15 @@ The corresponding instructions for Testing our framework are [here](https://gith
 
 ## System requirements
 
-* Windows version  (or higher) or MacOS Catalina (or Hhgher).
+* Windows version  (or higher) or MacOS Catalina (or Higher).
 * 64-bit Python 3.8.8 installation. We recommend installation through `pip` with numpy 1.19.2 or newer.
 * MySQL workbench platform. 
 
 ## Contact
-Mehul Bhanushali [(mehulb2203)](https://github.com/mehulb2203), Rama Krishna Pinnimty [(ramapinnimty)](https://github.com/ramapinnimty), Swanand Vaishampayan [(swanandsv)](https://github.com/swanandsv), Sushma Kakarla [(Sushk1821)](https://github.com/Sushk1821)
 
-If you face any problem while running this code, you can contact us at {mehulb, ramapinnimty, swanandsv, sushmakumarik21}@vt.edu.
+Mehul Bhanushali [(mehulb2203)](https://github.com/mehulb2203), Rama Krishna Pinnimty [(ramapinnimty)](https://github.com/ramapinnimty), Swanand Vaishampayan [(swanandsv)](https://github.com/swanandsv), Sushma Kakarla [(Sushk1821)](https://github.com/Sushk1821).
+
+If you face any problem while running this code, you can contact us at {mehulb, ramapinnimty, swanandsv, sushmakumarik21}@vt.edu
 
 ## Acknowledgements
 

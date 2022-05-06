@@ -21,3 +21,5 @@ Result in selenium: System will return the title of the video along with exit st
 
 Expected result: The user is able to stream the video.
 
+The detailed description of different test cases is provided in 
+

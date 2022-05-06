@@ -8,7 +8,7 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `video` /*!40100 DEFAULT CHARACTER SET 
 USE `video`;
 
 
-
+--code for admin table which has all the access
 
 CREATE TABLE `admins` (
   `username` varchar(20) NOT NULL,
@@ -17,9 +17,11 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-
+--dummy admin credential since another user can only be created by admin
 insert into admins values('admin', 'admin');
 
+
+--this is for creating user teble
 CREATE TABLE `users` (
   `username` varchar(20) NOT NULL,
   `password` varchar(100) DEFAULT NULL,
@@ -27,6 +29,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+--table for vudeo section and it will have video ID which will be unique for all the video
 CREATE TABLE `videos` (
   `video_ID` varchar(50) NOT NULL,
   `video_title` varchar(200) DEFAULT NULL,
@@ -39,7 +42,7 @@ CREATE TABLE `videos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-
+--table for favourite which will be updated only when a user watches a video multiple times
 
 CREATE TABLE `favourites` (
   `username` varchar(20) NOT NULL,
@@ -51,6 +54,7 @@ CREATE TABLE `favourites` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+--table for flags video 
 CREATE TABLE `flags` (
   `video_ID` varchar(50) NOT NULL,
   `username` varchar(20) NOT NULL,
@@ -62,7 +66,7 @@ CREATE TABLE `flags` (
 
 
 
-
+--script for getting the upload date for a video
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER add_date BEFORE INSERT ON `videos`
 FOR EACH ROW
@@ -72,7 +76,7 @@ END */;;
 DELIMITER ;
 
 
-
+--table for watch hostory
 CREATE TABLE `watched` (
   `video_ID` varchar(50) NOT NULL,
   `username` varchar(20) NOT NULL,
@@ -84,6 +88,8 @@ CREATE TABLE `watched` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+
+--procedure for the incrementing the count for video
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `add_to_fav`(IN ID VARCHAR(50), IN watcher VARCHAR(20))
 BEGIN

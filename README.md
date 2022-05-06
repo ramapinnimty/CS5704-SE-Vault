@@ -93,10 +93,10 @@ CS5704-SE-Vault % python ./Server/server.py
 
 ![Upload a image](images/uploaded_videos.png)
 
-We tracked the project progress using KANBAN board and you can find it under the project section of the repository.
+We tracked the project progress using KANBAN board and you can find it under the "Projects" section of the repository.
 
 
-The corresponding instructions for Testing our framework are here.
+The corresponding instructions for Testing our framework are [here](https://github.com/ramapinnimty/CS5704-SE-Vault/tree/main/Tests).
 
 ## Contact
 Mehul Bhanushali [(mehulb2203)](https://github.com/mehulb2203), Rama Krishna Pinnimty [(ramapinnimty)](https://github.com/ramapinnimty), Swanand Vaishampayan [(swanandsv)](https://github.com/swanandsv), Sushma Kakarla [(Sushk1821)](https://github.com/Sushk1821)

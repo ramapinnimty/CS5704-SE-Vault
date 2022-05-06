@@ -1,3 +1,4 @@
+# Importing all the necessary packages
 from flask import Flask, redirect, url_for, session, request, render_template_string, abort
 import requests
 import os
@@ -12,7 +13,6 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 
-
 @app.errorhandler(404)
 @nocache
 def error_404(e):
@@ -23,7 +23,6 @@ def error_404(e):
     return render_template_string(error_page)
 
 
-
 @app.errorhandler(403)
 @nocache
 def error_403(e):
@@ -32,7 +31,6 @@ def error_403(e):
     """
     error_page = ((requests.get(url='http://127.0.0.1:8080/html/{}'.format('403.html'))).content).decode("utf-8") # Done
     return render_template_string(error_page)
-
 
 
 @app.route("/", methods = ['GET'])
@@ -60,7 +58,6 @@ def start(): #WORKS
         most_viewed.update({ID : details})
     homepage = ((requests.get(url='http://127.0.0.1:8080/html/{}'.format('homepage.html'))).content).decode("utf-8") # Done
     return render_template_string(homepage, logged_in = logged_in, most_viewed = most_viewed)
-
 
 
 @app.route("/login", methods = ['POST', 'GET'])
@@ -96,7 +93,6 @@ def login_form(): #WORKS
             return redirect(url_for("login_form", l_error = True))
 
 
-
 @app.route("/signup", methods = ['GET', 'POST'])
 @nocache
 def signup_form(): #WORKS
@@ -127,7 +123,6 @@ def signup_form(): #WORKS
             return redirect(url_for("start"))
         else:
             return redirect(url_for("signup_form", s_error = True))
-
 
 
 @app.route("/change-password", methods = ['GET', 'POST'])
@@ -213,7 +208,6 @@ def delete_own_account(): #WORKS
             return redirect(url_for('delete_own_account', c_error = True))
 
 
-
 @app.route("/logout", methods = ['GET'])
 @nocache
 def logout_user(): #WORKS
@@ -223,7 +217,6 @@ def logout_user(): #WORKS
     """
     session.pop('user', None)
     return redirect(url_for("start"))
-
 
 
 @app.route("/dashboard", methods = ['GET'])
@@ -257,13 +250,11 @@ def dashboard(): #WORKS
                 return render_template_string(user_dashboard, username = session['user'], view_count = view_count, video_count = video_count, high_video_ID = best_vid_ID, high_title = best_vid_title, fav_video_ID = fav_vid_ID, fav_title = fav_vid_title)
 
 
-
 def allowed_file(filename): #WORKS
     """
     - Checks if the uploaded file is an MP4 file.
     """
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
 
 
 @app.route("/upload", methods = ['GET', 'POST'])
@@ -299,8 +290,6 @@ def upload_form(): #WORKS
             return redirect(url_for('watch_video', v = video_ID))
         else:
             return redirect(url_for('upload_form'))
-
-
 
 
 @app.route("/remove", methods = ['GET', 'POST'])
@@ -394,7 +383,6 @@ def watch_video(): #WORKS
             return render_template_string(video_page, random_vids = random_vids, video_ID = video_ID, title = vid_title, uploader = vid_uploader, views = vid_views, vid_upload_date = vid_upload_date)
 
 
-
 @app.route("/search", methods = ['POST'])
 @nocache
 def search_videos():
@@ -409,7 +397,6 @@ def search_videos():
                 abort(403)
         search_key = request.form['search']
         return redirect(url_for('results', search_query = search_key))
-
 
 
 @app.route("/results", methods = ['GET'])
@@ -442,7 +429,6 @@ def results():
         return render_template_string(search_page, results = result_dict, search = search_key, logged_in = logged_in)
 
 
-
 @app.route("/random", methods = ['GET'])
 @nocache
 def random_video():
@@ -457,7 +443,6 @@ def random_video():
                 abort(403)
         random_video_ID = ((requests.get(url='http://127.0.0.1:8080/random').content)).decode("utf-8") # Done
         return redirect(url_for('watch_video', v = random_video_ID))
-
 
 
 @app.route("/watched", methods = ['GET'])
@@ -484,7 +469,6 @@ def watched_videos():
             watched_dictionary.update({ID : [title, views, uploader]})
         watched_page = ((requests.get(url='http://127.0.0.1:8080/html/{}'.format('watched.html'))).content).decode("utf-8")
         return render_template_string(watched_page, watched = watched_dictionary)
-
 
 
 @app.route("/user/<username>", methods = ['GET'])
@@ -518,8 +502,6 @@ def user_videos(username):
         return render_template_string(user_page, logged_in = logged_in, username = username, user_videos = uploaded_dictionary)
 
 
-
-
 @app.route("/my-videos", methods = ['GET'])
 @nocache
 def my_videos():
@@ -545,7 +527,6 @@ def my_videos():
         return render_template_string(my_videos_page, username = username, user_videos = uploaded_dictionary)
 
 
-
 @app.route("/flag", methods = ['GET'])
 @nocache
 def flag_video():
@@ -564,7 +545,6 @@ def flag_video():
         username = session['user']
         requests.post(url='http://127.0.0.1:8080/flag', data={'video_ID' : video_ID, 'username' : username})
         return redirect(url_for('start'))
-
 
 
 @app.route("/favourites", methods = ['GET'])
@@ -592,6 +572,8 @@ def favourites():
             return render_template_string(favourites_page, fav = fav_dicttionary)
         else:
             return redirect(url_for('login_form'))
+
+
 # ADMIN PART
 
 @app.route("/add-admin", methods = ['GET', 'POST'])
@@ -643,7 +625,6 @@ def add_admin():
             return redirect(url_for('login_form'))
 
 
-
 @app.route("/flagged", methods = ['GET'])
 @nocache
 def flagged_videos():
@@ -672,7 +653,6 @@ def flagged_videos():
             return redirect(url_for('login_form'))
 
 
-
 @app.route("/admin-delete-video", methods = ['GET'])
 @nocache
 def admin_delete_video():
@@ -691,7 +671,6 @@ def admin_delete_video():
                 abort(403)
         else:
             return redirect(url_for('login_form'))
-
 
 
 @app.route("/admin-users", methods = ['GET'])
@@ -720,7 +699,6 @@ def admin_list_users():
             return redirect(url_for('login_form'))
 
 
-
 @app.route("/admin-delete-user/<username>", methods = ['GET'])
 @nocache
 def admin_delete_user(username):
@@ -738,7 +716,6 @@ def admin_delete_user(username):
                 abort(403)
         else:
             return redirect(url_for('login_form'))
-
 
 
 @app.route("/review", methods = ['GET'])
@@ -766,7 +743,6 @@ def admin_review_video():
             return redirect(url_for('login_form'))
 
 
-
 @app.route("/admin-remove-flag", methods = ['GET'])
 @nocache
 def admin_remove_flag():
@@ -785,7 +761,6 @@ def admin_remove_flag():
                 abort(403)
         else:
             return redirect(url_for('login_form'))
-
 
 
 

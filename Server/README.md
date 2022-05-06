@@ -1,11 +1,11 @@
-This folder contains all the code for server side.
+This folder contains all the code for server side of the application.
 
-scripts:
+Scripts:
 
-image_capture.py - for creating the thumbnails
+`image_capture.py` - for creating the thumbnails of the uploaded videos
 
-fuzzy_search.py - for searching videos feature in the SE-VAULT
+`fuzzy_search.py` - for efficiently searching videos in SE-VAULT
 
-database.py - connects and run all the database commands to isnert, delete and update
+`database.py` - connects and executes all the database commands to insert, delete and update
 
-server.py - for running the server side scripts
+`server.py` - the main server-side scripts

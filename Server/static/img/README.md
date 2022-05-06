@@ -1,1 +1,1 @@
-This folder is for the SE-VAULT logo
+This folder is for the SE-VAULT logo.
